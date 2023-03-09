@@ -6,7 +6,4 @@ jobs:
     steps:
       - name: my-step
         run: 
-          echo "Hello World!"
-          echo "Current Time is $(date)"
-          echo "Current Date is $(date +'%Y-%m-%d')"
-          echo "Done!"
+          echo "Test Run!!!"
