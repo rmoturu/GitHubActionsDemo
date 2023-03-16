@@ -7,5 +7,3 @@ jobs:
       - name: my-step
         run: 
           echo "Test Run!!!"
-          echo "commit id: $GITHUB_SHA"
-          echo "repo: $GITHUB_REPOSITORY"
