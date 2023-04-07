@@ -4,6 +4,10 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
+      - name: set-variables:
+        run: |
+              echo "Github commit by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }}" >> $short_desc
+     echo 'CONTENT_ENV<<EOF' >> $GITHUB_ENV
       - name: my-step
         uses: ServiceNow/servicenow-devops-change@v1.34.2
         with:
