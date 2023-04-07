@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: set-variables
         run: |
-              echo "Github commit by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }}" >> $short_desc
+              echo "short_desc=Github commit by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }}" >> $GITHUB_ENV
       - name: my-step
         uses: ServiceNow/servicenow-devops-change@v1.34.2
         with:
