@@ -4,7 +4,7 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: set-variables
+      - name: set-up-variables
         run: |
               echo "short_desc=Github commit by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }}" >> $GITHUB_ENV
               echo "desc=Automated Software Deployment. \nGithub commit pushed to branch ${{ github.ref_name }} by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }} \nCommit id: ${{ github.sha }} \n Commit message: ${{ github.event.head_commit.message }}" >> $GITHUB_ENV
