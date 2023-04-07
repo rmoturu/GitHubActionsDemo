@@ -7,7 +7,7 @@ jobs:
       - name: set-up-variables
         run: |
               echo "short_desc=Github commit by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }}" >> $GITHUB_ENV
-              echo "desc=Automated Software Deployment. \nGithub commit pushed to branch ${{ github.ref_name }} by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }} \nCommit id: ${{ github.sha }} \n Commit message: ${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+              echo "desc=Automated Software Deployment. \nGithub commit pushed to branch ${{ github.ref_name }} by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }} \nCommit id: ${{ github.sha }} \n Commit message: ${{ github.event.head_commit.message /$'\n' }}" >> $GITHUB_ENV
       - name: my-step
         uses: ServiceNow/servicenow-devops-change@v1.34.2
         with:
