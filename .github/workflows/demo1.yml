@@ -13,7 +13,7 @@ jobs:
       - name: character-replacement-test
         run: |
           REPO="${{github.actor}}]n\ntt"
-          DB_NAME="${REPO//\n/_}"
+          DB_NAME="${REPO//\\n/_}"
           echo $DB_NAME
       - name: my-step
         uses: ServiceNow/servicenow-devops-change@v1.34.2
