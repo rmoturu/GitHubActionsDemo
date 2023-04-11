@@ -12,7 +12,7 @@ jobs:
               
       - name: character-replacement-test
         run: |
-          REPO="${github.actor}"
+          REPO="${{github.actor}}"
           DB_NAME="${REPO//\n/_}"
           echo $DB_NAME
       - name: my-step
