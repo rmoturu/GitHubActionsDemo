@@ -17,7 +17,7 @@ jobs:
           echo $DB_NAME
           COMMIT_MSGS="${{github.event.head_commit.message}}"
           echo $COMMIT_MSGS
-          FORM_CMT_MSGS="${COMMIT_MSGS//\\n/}"
+          FORM_CMT_MSGS="${COMMIT_MSGS | tr '\n' ' '}"
           echo "commit_msgs=${FORM_CMT_MSGS}" >> $GITHUB_ENV
       - name: my-step
         uses: ServiceNow/servicenow-devops-change@v1.34.2
