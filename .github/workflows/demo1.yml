@@ -14,9 +14,9 @@ jobs:
         run: |
           REPO="${{github.actor}}]n\ntt"
           DB_NAME="${REPO//\\n/_}"
-          echo $DB_NAME
+          echo db_name $DB_NAME
           COMMIT_MSGS="${{github.event.head_commit.message}}"
-          echo $COMMIT_MSGS
+          echo msgs $COMMIT_MSGS
           FORM_CMT_MSGS="${COMMIT_MSGS | tr '\n' ' '}"
           echo "commit_msgs=${FORM_CMT_MSGS}" >> $GITHUB_ENV
       - name: my-step
