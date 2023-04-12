@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: set-up-variables
         run: |
-              COMMIT_MSGS="${{github.event.head_commit.message//$'\n'/ | }}"
+              COMMIT_MSGS="${github.event.head_commit.message//$'\n'/ | }"
               echo "short_desc=Github commit by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }} " >> $GITHUB_ENV
               echo "desc=Automated Software Deployment. \nGithub commit pushed to branch ${{ github.ref_name }} by ${{ github.actor }} on ${{ github.event.head_commit.timestamp }} \nCommit id: ${{ github.sha }} \n Commit message: ${COMMIT_MSGS//$'\n'/ | }" >> $GITHUB_ENV
               
